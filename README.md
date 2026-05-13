@@ -16,12 +16,12 @@ Este projeto é um exemplo básico de comunicação série (UART) utilizando o p
 ## Ferramentas e Dependências
 
 * **IDE:** Code Composer Studio (CCS)
-* **SDK:** C2000WARE versão 5.04.00.00
+* **SDK:** C2000WARE versão 26.00.00.00
 * **Ferramenta de Configuração:** SysConfig (ferramenta automática utilizada para gerar o código de inicialização do hardware)
 
 ## Configurações de Hardware (SysConfig)
 
-O projeto tira partido da ferramenta SysConfig (`sci.syscfg`) para configurar a interface SCI. As configurações geradas são as seguintes:
+O projeto usa a ferramenta SysConfig (`sci.syscfg`) para configurar a interface SCI. As configurações geradas são as seguintes:
 
 * **Módulo SCI Atribuído:** SCIA
 * **Pinos Utilizados:**
@@ -43,6 +43,6 @@ O ficheiro principal `main.c` é responsável pelo fluxo do programa:
 
 1. Conecte a placa LAUNCHXL-F28379D ao computador via cabo USB.
 2. Compile e grave o programa no microcontrolador usando o Code Composer Studio.
-3. Abra um terminal de comunicação série no seu computador (por exemplo, PuTTY, Tera Term ou o terminal integrado do CCS).
+3. Abra um terminal de comunicação serial, como o terminal integrado do CCS (View > Console > Serial Console).
 4. Configure o terminal para a porta COM correta criada pela placa (geralmente descrita como *XDS100v2 Class USB Serial Port*). Certifique-se de usar a Baud Rate configurada (por padrão costuma ser 115200 bps em projetos LaunchPad F28379D, com 8 bits de dados, sem paridade, 1 stop bit).
 5. Escreva no terminal: os caracteres digitados deverão aparecer no ecrã como resposta enviada pelo microcontrolador.
