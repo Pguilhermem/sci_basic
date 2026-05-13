@@ -1,12 +1,8 @@
-Aqui está uma proposta de ficheiro `README.md` estruturado e detalhado para o seu projeto, escrito em Português:
-
----
-
-# Projeto SCI Basic (Echo de Porta Série)
+# Projeto SCI Basic (Echo de Porta Serial)
 
 ## Descrição do Projeto
 
-Este projeto é um exemplo básico de comunicação série (UART) utilizando o periférico SCI (Serial Communications Interface) para os microcontroladores da família C2000 da Texas Instruments. O código funciona em modo "Echo" (Eco) com base em interrupções: qualquer caractere recebido pela placa através da porta série é imediatamente retransmitido de volta para o emissor.
+Este projeto é um exemplo básico de comunicação serial (UART) utilizando o periférico SCI (Serial Communications Interface) para os microcontroladores da família C2000 da Texas Instruments. O código funciona em modo "Echo" (Eco) com base em interrupções: qualquer caractere recebido pela placa através da porta serial é imediatamente retransmitido de volta para o emissor.
 
 ## Hardware Suportado
 
@@ -37,7 +33,7 @@ O ficheiro principal `main.c` é responsável pelo fluxo do programa:
 
 1. **Inicialização:** O código inicializa o dispositivo (`Device_init()`), o módulo de interrupções PIE (`Interrupt_initModule()`), a tabela de vetores de interrupção (`Interrupt_initVectorTable()`) e a placa com as definições do SysConfig (`Board_init()`).
 2. **Ciclo Principal:** As interrupções globais e de tempo real são ativadas e o processador entra num ciclo infinito (`while(1)`), aguardando pela ocorrência de eventos.
-3. **Rotina de Interrupção (ISR):** A função `INT_SCI0_RX_ISR` é ativada sempre que um dado chega à porta série. A rotina bloqueia até ler o caractere do FIFO (`SCI_readCharBlockingFIFO`) e envia esse mesmo caractere de volta para o FIFO de transmissão (`SCI_writeCharBlockingFIFO`). No final, limpa o estado da interrupção para estar pronta a receber o próximo caractere.
+3. **Rotina de Interrupção (ISR):** A função `INT_SCI0_RX_ISR` é ativada sempre que um dado chega à porta serial. A rotina bloqueia até ler o caractere do FIFO (`SCI_readCharBlockingFIFO`) e envia esse mesmo caractere de volta para o FIFO de transmissão (`SCI_writeCharBlockingFIFO`). No final, limpa o estado da interrupção para estar pronta a receber o próximo caractere.
 
 ## Como Testar
 
