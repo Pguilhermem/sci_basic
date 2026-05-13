@@ -1,8 +1,0 @@
-{
-    "interruptInfo" : [
-        {
-            "interruptName": "INT_SCI0_RX",
-            "interruptHandler": "INT_SCI0_RX_ISR"
-        }
-    ]
-}
